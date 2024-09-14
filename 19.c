@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main(){
+    int balance=10000;
+    int choice,amount;
+    printf("Welcome to XYZ Banking\nChoose option(1-3)\n1.Add funds/Deposit\n2.Withdraw Funds\n3.Check Balance\n ");
+    scanf("%d",&choice);
+    if(choice==1){
+        printf("Enter amount to deposit\n");
+        scanf("%d",&amount);
+        if(amount<0 || amount==0){
+            printf("Please enter valid amount");
+        }else{
+            balance=balance+amount;
+            printf("Your new balance is %d",balance);
+        }
+    }else if(choice==2){
+        printf("Enter amount to withdraw\n");
+        scanf("%d",&amount);
+        if(amount>balance){
+            printf("Insufficient funds");
+        }else{
+            balance=balance-amount;
+            printf("Withdraw successful\nYour remaining balance is %d",balance);
+        }
+    }else if(choice==3){
+        printf("Your current balance is %d",balance);
+    }else{
+        printf("Invalid Input, Please try again");
+    }
+
+}
